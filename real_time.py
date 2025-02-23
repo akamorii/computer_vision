@@ -16,15 +16,15 @@ while True:
     success, img = cap.read()
     nm = cv2.resize(img, (250, 200))
     # nm = cv2.GaussianBlur(nm, (15, 15), 5)
-    nm = cv2.cvtColor(nm, cv2.COLOR_BGR2GRAY)
+    # nm = cv2.cvtColor(nm, cv2.COLOR_BGR2GRAY)
     
     nm = cv2.Canny(nm, 120, 120)
-    nm = cv2.dilate(nm, kernel, iterations=1)
+    # nm = cv2.dilate(nm, kernel, iterations=1)
     
-    nm = cv2.erode(nm, kernel, 1)
+    # nm = cv2.erode(nm, kernel, 1)
     
     # nm[0:50, 0:50]
     cv2.imshow(f'{nm.shape[0]}', nm)
     
-    if cv2.waitKey(10) & 0xFF == ord('q'):
+    if (cv2.waitKey(10) & 0xff) == ord('q'):
         break
